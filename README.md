@@ -1,5 +1,5 @@
 # ion-client
-[![Tests](https://img.shields.io/github/actions/workflow/status/maxmouchet/ion-client/tests.yml?logo=github)](https://github.com/maxmouchet/ion-client/actions/workflows/tests.yml)
+[![Tests](https://img.shields.io/github/actions/workflow/status/maxmouchet/ion-client/tests.yaml?logo=github)](https://github.com/maxmouchet/ion-client/actions/workflows/tests.yaml)
 [![PyPI](https://img.shields.io/pypi/v/ion-client?logo=pypi&logoColor=white)](https://pypi.org/project/ion-client/)
 
 Simple Aruba Instant On client. Handles re-authentication and 2FA with one-time passwords.

@@ -1,0 +1,28 @@
+name: Tests
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - uses: dioptra-io/setup-poetry-action@v1
+      - run: poetry install
+      - run: poetry run pytest
+        env:
+          ION_USERNAME: ${{ secrets.ION_USERNAME }}
+          ION_PASSWORD: ${{ secrets.ION_PASSWORD }}
+
+  pypi:
+    needs: [test]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dioptra-io/publish-python-action@v1
+        with:
+          password: ${{ secrets.PYPI_TOKEN }}
+          upload: ${{ startsWith(github.ref, 'refs/tags/v') }}

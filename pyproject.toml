@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ion-client"
-version = "0.1.0"
+version = "1.0.0"
 description = "Aruba Instant On client"
 authors = ["Maxime Mouchet <max@maxmouchet.com>"]
 license = "MIT"
